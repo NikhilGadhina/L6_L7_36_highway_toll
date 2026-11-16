@@ -1,0 +1,165 @@
+FFF...F..FFF.FF..FFFFF..                                                 [100%]
+=================================== FAILURES ===================================
+__________________ test_parse_plate_fuzzes_unexpected_inputs ___________________
+test_highway_toll.py:32: in _assert_value_or_validation_error
+    result = function(value)
+             ^^^^^^^^^^^^^^^
+highway_toll.py:2: in parse_plate
+    state, district, series, number = plate.split('-')
+                                      ^^^^^^^^^^^
+E   AttributeError: 'NoneType' object has no attribute 'split'
+
+During handling of the above exception, another exception occurred:
+test_highway_toll.py:82: in test_parse_plate_fuzzes_unexpected_inputs
+    @given(ANY_INPUT)
+                   ^^^
+test_highway_toll.py:84: in test_parse_plate_fuzzes_unexpected_inputs
+    _assert_value_or_validation_error(parse_plate, value, _valid_plate_result)
+test_highway_toll.py:36: in _assert_value_or_validation_error
+    pytest.fail(
+E   Failed: parse_plate raised unexpected AttributeError for None: 'NoneType' object has no attribute 'split'
+E   Failing test case: test_parse_plate_fuzzes_unexpected_inputs(
+E       value=None,
+E   )
+E   Explanation:
+E       These lines were always and only run by failing test cases:
+E           /home/ubuntu/highway_toll/lab7/test_highway_toll.py:35
+___________________ test_trip_cost_fuzzes_unexpected_inputs ____________________
+test_highway_toll.py:32: in _assert_value_or_validation_error
+    result = function(value)
+             ^^^^^^^^^^^^^^^
+highway_toll.py:6: in trip_cost
+    count, rate = text.lower().split('x')
+                  ^^^^^^^^^^
+E   AttributeError: 'NoneType' object has no attribute 'lower'
+
+During handling of the above exception, another exception occurred:
+test_highway_toll.py:88: in test_trip_cost_fuzzes_unexpected_inputs
+    @given(ANY_INPUT)
+                   ^^^
+test_highway_toll.py:90: in test_trip_cost_fuzzes_unexpected_inputs
+    _assert_value_or_validation_error(trip_cost, value, _valid_trip_result)
+test_highway_toll.py:36: in _assert_value_or_validation_error
+    pytest.fail(
+E   Failed: trip_cost raised unexpected AttributeError for None: 'NoneType' object has no attribute 'lower'
+E   Failing test case: test_trip_cost_fuzzes_unexpected_inputs(
+E       value=None,
+E   )
+E   Explanation:
+E       These lines were always and only run by failing test cases:
+E           /home/ubuntu/highway_toll/lab7/test_highway_toll.py:35
+___________________ test_axle_class_fuzzes_unexpected_inputs ___________________
+  + Exception Group Traceback (most recent call last):
+  |   File "/home/ubuntu/highway_toll/lab7/test_highway_toll.py", line 94, in test_axle_class_fuzzes_unexpected_inputs
+  |     @given(ANY_INPUT)
+  |                    ^^^
+  | BaseExceptionGroup: Hypothesis found 2 distinct failures. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/home/ubuntu/highway_toll/lab7/test_highway_toll.py", line 96, in test_axle_class_fuzzes_unexpected_inputs
+    |     _assert_value_or_validation_error(axle_class, value, _valid_axle_result)
+    |   File "/home/ubuntu/highway_toll/lab7/test_highway_toll.py", line 40, in _assert_value_or_validation_error
+    |     assert is_valid_result(value, result), (
+    | AssertionError: axle_class silently accepted invalid input 0 and returned 'truck'
+    | assert False
+    |  +  where False = <function _valid_axle_result at 0x7feb959b0680>(0, 'truck')
+    | Failing test case: test_axle_class_fuzzes_unexpected_inputs(
+    |     value=0,
+    | )
+    | Explanation:
+    |     These lines were always and only run by failing test cases:
+    |         /home/ubuntu/highway_toll/lab7/highway_toll.py:14
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "/home/ubuntu/highway_toll/lab7/test_highway_toll.py", line 32, in _assert_value_or_validation_error
+    |     result = function(value)
+    |              ^^^^^^^^^^^^^^^
+    |   File "/home/ubuntu/highway_toll/lab7/highway_toll.py", line 10, in axle_class
+    |     n = int(axles)
+    |         ^^^^^^^^^^
+    | TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "/home/ubuntu/highway_toll/lab7/test_highway_toll.py", line 96, in test_axle_class_fuzzes_unexpected_inputs
+    |     _assert_value_or_validation_error(axle_class, value, _valid_axle_result)
+    |   File "/home/ubuntu/highway_toll/lab7/test_highway_toll.py", line 36, in _assert_value_or_validation_error
+    |     pytest.fail(
+    | Failed: axle_class raised unexpected TypeError for None: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+    | Failing test case: test_axle_class_fuzzes_unexpected_inputs(
+    |     value=None,
+    | )
+    | Explanation:
+    |     These lines were always and only run by failing test cases:
+    |         /home/ubuntu/highway_toll/lab7/test_highway_toll.py:35
+    +------------------------------------
+_______________ test_parse_plate_rejects_invalid_examples[None] ________________
+test_highway_toll.py:127: in test_parse_plate_rejects_invalid_examples
+    parse_plate(plate)
+highway_toll.py:2: in parse_plate
+    state, district, series, number = plate.split('-')
+                                      ^^^^^^^^^^^
+E   AttributeError: 'NoneType' object has no attribute 'split'
+___________ test_parse_plate_rejects_invalid_examples[K-05-AB-1234] ____________
+test_highway_toll.py:126: in test_parse_plate_rejects_invalid_examples
+    with pytest.raises(ValueError):
+E   Failed: DID NOT RAISE ValueError
+____________ test_parse_plate_rejects_invalid_examples[KA-00-AB-1] _____________
+test_highway_toll.py:126: in test_parse_plate_rejects_invalid_examples
+    with pytest.raises(ValueError):
+E   Failed: DID NOT RAISE ValueError
+________________ test_trip_cost_rejects_invalid_examples[None] _________________
+test_highway_toll.py:133: in test_trip_cost_rejects_invalid_examples
+    trip_cost(text)
+highway_toll.py:6: in trip_cost
+    count, rate = text.lower().split('x')
+                  ^^^^^^^^^^
+E   AttributeError: 'NoneType' object has no attribute 'lower'
+________________ test_trip_cost_rejects_invalid_examples[3x-1] _________________
+test_highway_toll.py:132: in test_trip_cost_rejects_invalid_examples
+    with pytest.raises(ValueError):
+E   Failed: DID NOT RAISE ValueError
+________________ test_trip_cost_rejects_invalid_examples[-1x10] ________________
+test_highway_toll.py:132: in test_trip_cost_rejects_invalid_examples
+    with pytest.raises(ValueError):
+E   Failed: DID NOT RAISE ValueError
+________________ test_axle_class_rejects_invalid_examples[None] ________________
+test_highway_toll.py:139: in test_axle_class_rejects_invalid_examples
+    axle_class(axles)
+highway_toll.py:10: in axle_class
+    n = int(axles)
+        ^^^^^^^^^^
+E   TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+________________ test_axle_class_rejects_invalid_examples[True] ________________
+test_highway_toll.py:138: in test_axle_class_rejects_invalid_examples
+    with pytest.raises(ValueError):
+E   Failed: DID NOT RAISE ValueError
+_________________ test_axle_class_rejects_invalid_examples[1] __________________
+test_highway_toll.py:138: in test_axle_class_rejects_invalid_examples
+    with pytest.raises(ValueError):
+E   Failed: DID NOT RAISE ValueError
+_________________ test_axle_class_rejects_invalid_examples[-5] _________________
+test_highway_toll.py:138: in test_axle_class_rejects_invalid_examples
+    with pytest.raises(ValueError):
+E   Failed: DID NOT RAISE ValueError
+_______________ test_axle_class_rejects_invalid_examples[2.5_0] ________________
+test_highway_toll.py:138: in test_axle_class_rejects_invalid_examples
+    with pytest.raises(ValueError):
+E   Failed: DID NOT RAISE ValueError
+=========================== short test summary info ============================
+FAILED test_highway_toll.py::test_parse_plate_fuzzes_unexpected_inputs - Fail...
+FAILED test_highway_toll.py::test_trip_cost_fuzzes_unexpected_inputs - Failed...
+FAILED test_highway_toll.py::test_axle_class_fuzzes_unexpected_inputs - BaseE...
+FAILED test_highway_toll.py::test_parse_plate_rejects_invalid_examples[None]
+FAILED test_highway_toll.py::test_parse_plate_rejects_invalid_examples[K-05-AB-1234]
+FAILED test_highway_toll.py::test_parse_plate_rejects_invalid_examples[KA-00-AB-1]
+FAILED test_highway_toll.py::test_trip_cost_rejects_invalid_examples[None] - ...
+FAILED test_highway_toll.py::test_trip_cost_rejects_invalid_examples[3x-1] - ...
+FAILED test_highway_toll.py::test_trip_cost_rejects_invalid_examples[-1x10]
+FAILED test_highway_toll.py::test_axle_class_rejects_invalid_examples[None]
+FAILED test_highway_toll.py::test_axle_class_rejects_invalid_examples[True]
+FAILED test_highway_toll.py::test_axle_class_rejects_invalid_examples[1] - Fa...
+FAILED test_highway_toll.py::test_axle_class_rejects_invalid_examples[-5] - F...
+FAILED test_highway_toll.py::test_axle_class_rejects_invalid_examples[2.5_0]
+14 failed, 10 passed in 3.60s

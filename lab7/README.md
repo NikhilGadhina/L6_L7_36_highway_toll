@@ -1,3 +1,5 @@
+Student: Nikhil Gadhina (PES2UG24CS165)
+
 # L6_L7_36 — Highway Toll Calculator
 
 Lab 7: Fuzz Testing

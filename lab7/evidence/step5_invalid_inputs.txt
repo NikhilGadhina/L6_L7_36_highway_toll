@@ -1,0 +1,8 @@
+==== Running parse_plate ====
+Enter a plate (e.g. KA-05-AB-1234): Invalid State, District and Number: plate must match SS-DD-SERIES-NUMBER (for example KA-05-AB-1234)
+
+==== Running trip_cost ====
+Enter trips x rate (e.g. 3x150): Invalid Trip Cost: trip cost must match trips x rate using non-negative whole numbers
+
+==== Running axle_class ====
+Enter an axle count (e.g. 3): Invalid Vehicle Class: axle count must be at least 2
